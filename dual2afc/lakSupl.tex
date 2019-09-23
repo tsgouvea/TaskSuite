@@ -1,0 +1,44 @@
+\section{Learning optimal waiting time}
+
+Our aim is to model time investment decisions in the context of perceptual decision making.
+The relevant behavioral data are summarized in \cite{lak2014orbitofrontal}, figures 3 and S3.
+
+Model 1 uses an R-learning type delta learning rule to learn a scalar waiting time ($k$) for each perceived stimulus ($\hat{x}$).
+It recapitulates most aspects of the data, but fails with regard to effect of preceding outcome.
+Also, it's learning rule is unstable.
+I believe the way forward is to learn waiting time as a function of reward probability, and to learn reward probability from experienced stimuli.
+
+Model 2 learns reward probability from experienced stimuli.
+It learns a decision boundary, and also a sensitivity term relating the distance from boundary to reward probability.
+
+Model 3 is incomplete, and will learn waiting time as a function of reward probability.
+For simplicity, it will ignore the sensory uncertainty, and reward probability will be explicitly cued.
+
+Model 4 will put models 2 and 3 together.
+
+\input{dual2afc/TI_model1.tex}
+
+%\subsection{Task description}
+
+%\subsection{Learning the decision boundary $\hat{b}$}
+%\clearpage
+\input{dual2afc/TI_model2.tex}
+
+\input{dual2afc/TI_model3.tex} 
+%\clearpage
+\input{dual2afc/TI_model4.tex}
+
+\clearpage
+\begin{align}
+\text{Return } G &= P(\text{reward} \mid \text{choice} , \text{waiting time } k) - \text{opportunity cost} \nonumber
+\\
+\text{opportunity cost } &=  k \times   \text{average reward rate } \rho \nonumber
+\\
+\frac{\partial G}{\partial k} \nonumber &= 0 \\
+k &= -\beta \log \frac{\beta \rho}{P(\text{reward})} \nonumber \\
+\text{for } \beta = 1 \qquad k &= \log \frac{P(\text{reward})}{\rho} \nonumber
+\end{align}
+
+\clearpage
+
+optimal waiting time $k = \log \frac{P(\text{reward})}{\rho} $

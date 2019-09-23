@@ -1,0 +1,12 @@
+\subsection{Model 3: time investment as function of reward probability, isolated from perceptual decision}
+
+An animal should wait at the reward port whenever he believes a reward is coming, and abort the trial otherwise.
+This decision should be based on a model similar to \cite{starkweather2017dopamine}, where belief about whether a reward is available should be informed by both perceptual confidence and elapsed time at the reward port.
+
+These components can be isolated, eg. on a different task in which pre-reward delays have the same distribution but reward probability is explicitly cued.
+
+Roughly, this will rely on a Bayesian procedure estimating posterior probability of reward given time waited with no reward delivered, where the prior is the cued reward probability, and the likelihood is the CDF of the reward delay distribution.
+Any quantity of time waited during which no reward is delivered is evidence that choice was incorrect.
+The threshold to abort a trial might be learned so as to maximize average reward rate.
+
+I have relevant code for this that I wrote when analyzing waiting time data in matching task, but haven't yet had the time to put it here.

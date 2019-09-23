@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage[]{natbib}
+\usepackage{subfig}
+\usepackage{bbold}
+\usepackage{multirow}
+\usepackage{algorithm,algorithmic}
+\DeclareMathOperator*{\argmin}{\arg\min}
+\counterwithin{figure}{section}
+
+\title{TaskSuite}
+\author{Thiago Gouvea}
+\date{July 2019}
+
+\begin{document}
+
+% \frontmatter
+% \maketitle
+
+% \begin{abstract}
+% \input{abstract}
+% \end{abstract}
+
+\tableofcontents
+
+\include{dual2afc/lakSupl}
+
+%\include{flux/main_flux}
+\include{lauglim/main_lauglim}
+
+\bibliography{bibliography.bib}
+\bibliographystyle{apalike}
+%\bibliographystyle{alpha}
+\end{document}
